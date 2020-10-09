@@ -1,15 +1,17 @@
 const AWS = require("aws-sdk");
 
-const metadataService = new AWS.MetadataService();
-
 function getInstanceId() {
-  return metadataService
-    .request("/latest/meta-data/instance-id")
-    .promise()
-    .then((data) => {
+  return new Promise((resolve, reject) => {
+    var metadata = new AWS.MetadataService();
+    metadata.request("/latest/meta-data/instance-id", function (error, data) {
+      if (error) {
+        console.log(error);
+        reject(error);
+      }
       console.log(data);
-      return "beep boop";
+      resolve(data);
     });
+  });
 }
 
 module.exports = { getInstanceId };
