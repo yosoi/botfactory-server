@@ -4,6 +4,7 @@
   "description": "Server code for botfactory.",
   "main": "server.js",
   "dependencies": {
+    "aws-sdk": "^2.771.0",
     "axios": "^0.20.0",
     "discord.js": "^12.3.1"
   },
