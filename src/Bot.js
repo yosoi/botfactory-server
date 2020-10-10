@@ -7,7 +7,6 @@ async function boot() {
   const apiKey = await getApiKey();
   console.log(`API KEY: ${apiKey}`);
   const instanceId = await getInstanceId();
-  console.log(instanceId);
   const config = await getConfig(apiKey, instanceId);
   console.log(config);
   return {
