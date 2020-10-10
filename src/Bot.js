@@ -4,12 +4,12 @@ const { getResponse } = require("./function/getResponse");
 
 async function boot() {
   const instanceId = await getInstanceId();
-  const config = await getConfig(apiKey, instanceId);
+  const config = await getConfig(instanceId);
   console.log(config);
   return {
     config: config,
     getResponse: (message) =>
-      getResponse(apiKey, instanceId, config.prefix, message),
+      getResponse(instanceId, config.prefix, message),
   };
 }
 
