@@ -8,8 +8,7 @@ async function boot() {
   console.log(config);
   return {
     config: config,
-    getResponse: (message) =>
-      getResponse(instanceId, config.prefix, message),
+    getResponse: (message) => getResponse(instanceId, config.prefix, message),
   };
 }
 
