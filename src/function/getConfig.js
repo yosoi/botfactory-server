@@ -5,7 +5,7 @@ async function getConfig(instanceId) {
   const url = createUrl("config", instanceId);
   return get(url).then((response) => {
     if (!response.token) {
-      throw `No token associated with ${instanceId}.`;
+      throw `No token exists for this instance (${instanceId}).`;
     }
     return response;
   });
