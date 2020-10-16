@@ -11,6 +11,7 @@ Bot.boot()
       getResponse(message).then((response) => {
         if (response) {
           message.channel.send(response);
+          console.log(`responded: ${response}`);
         }
       });
     });

@@ -8,9 +8,7 @@ async function boot() {
   return {
     config: config,
     getResponse: async (message) => {
-      const response = await getResponse(instanceId, config.prefix, message);
-      console.log("response: ", response);
-      return response;
+      return await getResponse(instanceId, config.prefix, message);
     },
   };
 }
