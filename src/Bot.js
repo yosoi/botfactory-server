@@ -7,8 +7,10 @@ async function boot() {
   const config = await getConfig(instanceId);
   return {
     config: config,
-    getResponse: function (message) {
-      return getResponse(instanceId, config.prefix, message);
+    getResponse: async (message) => {
+      const response = await getResponse(instanceId, config.prefix, message);
+      console.log("response: ", response);
+      return response;
     },
   };
 }
