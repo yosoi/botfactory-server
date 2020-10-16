@@ -7,7 +7,9 @@ async function boot() {
   return getConfig(instanceId).then((config) => {
     return {
       config: config,
-      getResponse: (message) => getResponse(instanceId, config.prefix, message),
+      getResponse: (message) => {
+        return getResponse(instanceId, config.prefix, message);
+      },
     };
   });
 }
