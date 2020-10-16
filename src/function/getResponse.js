@@ -6,10 +6,7 @@ function getResponse(instanceId, prefix, message) {
     return;
   }
   const url = createUrl("response", instanceId);
-  return post({ message: message, prefix: prefix }, url).then((response) => {
-    console.log(response);
-    return "hello";
-  });
+  return post({ message: message, prefix: prefix }, url);
 }
 
 module.exports = { getResponse };
