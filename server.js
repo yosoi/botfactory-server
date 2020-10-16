@@ -9,7 +9,7 @@ Bot.boot()
     });
     client.on("message", (message) => {
       bot.getResponse(message).then((response) => {
-        message.channel.send(response.content);
+        message.channel.send(response);
       });
     });
     client.login(bot.config.token);
