@@ -4,11 +4,12 @@ const { getResponse } = require("./function/getResponse");
 
 async function boot() {
   const instanceId = await getInstanceId();
-  const config = await getConfig(instanceId);
-  return {
-    config: config,
-    getResponse: (message) => getResponse(instanceId, config.prefix, message),
-  };
+  return getConfig(instanceId).then((config) => {
+    return {
+      config: config,
+      getResponse: (message) => getResponse(instanceId, config.prefix, message),
+    };
+  });
 }
 
 module.exports = { boot };
